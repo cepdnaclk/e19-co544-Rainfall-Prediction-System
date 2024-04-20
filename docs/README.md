@@ -3,14 +3,14 @@ layout: home
 permalink: index.html
 
 # Please update this with your repository name and title
-repository-name: eYY-XXX-project-template
-title:
+repository-name: e19-co544-Crop-Recommendation-System
+title:Crop Recommendation System
 ---
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
 # Project Title
-
+Crop Recommendation System
 ---
 
 <!-- 
