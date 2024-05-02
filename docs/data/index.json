@@ -14,7 +14,7 @@
             "name": "Kumara I.P.S.N.U.",
             "email": "e19205@eng.pdn.ac.lk",
             "eNumber": "E/19/205"
-        }
+        },
         {
             "name": "Muthukumarana M.P.S.A.",
             "email": "e19249@eng.pdn.ac.lk",
@@ -32,5 +32,8 @@
             "email": "damayanthiherath@eng.pdn.ac.lk"
         }
     ],
-    "tags": [Crop Recommendation System, Machine Learning]
+    "tags": [
+        "Crop Recommendation System",
+        "Machine Learning"
+    ]
 }
