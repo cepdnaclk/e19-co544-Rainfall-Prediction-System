@@ -1,24 +1,23 @@
-# Precision Agriculture Crop Recommendation System
+# Rainfall Prediction System
+
+![Rainfall Prediction System](images/rainfall_prediction.png)
 
 ## Overview
-This repository hosts a precision agriculture tool that recommends crops based on soil and environmental data, aiming to empower farmers with actionable insights for improved productivity, sustainability, and profitability.
+
+The Rainfall Prediction System is a machine learning-based project aimed at providing accurate rainfall predictions for the regions of Vavuniya, Anuradhapura, and Maha Illuppallama. The system utilizes ensemble methods and individual machine learning models to forecast rainfall patterns, assisting farmers and resource managers in making informed decisions related to agriculture and water management.
 
 ## Features
-- Analyzes soil and environmental data
-- Empowers farmers with data-driven insights
-- Improves productivity and sustainability
-- Maximizes profitability
 
-## Technologies
-- Python
-- Machine Learning
-- Data visualization libraries
+- **Data Collection**: Historical rainfall data is collected from the Meteorological Department in Sri Lanka to build predictive models.
+- **Data Preprocessing**: Exploratory Data Analysis (EDA) techniques are applied to preprocess the collected data, ensuring its quality and relevance.
+- **Model Selection**: Various machine learning algorithms are employed, including SARIMA, decision tree, random forest, Gradient Boosting Machine (GBM), XGBoost, and Long Short-Term Memory (LSTM) networks.
+- **Evaluation Metrics**: Each model is evaluated using metrics such as Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-value to assess its predictive performance.
+- **MLOps Integration**: Continuous integration and deployment (CI/CD) pipelines are implemented for MLOps, ensuring seamless model updates and deployment.
 
-## Getting Started
-1. Clone the repository.
-2. Install required dependencies.
-3. Prepare soil and environmental data.
-4. Run the main script for crop recommendations.
+## Installation
+
+1. Clone the repository:
+   https://github.com/cepdnaclk/e19-co544-Rainfall-Prediction-System
 
 ## Team Members
 - Danujan S. (e19060@eng.pdn.ac.lk)
