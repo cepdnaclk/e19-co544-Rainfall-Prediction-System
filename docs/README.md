@@ -11,7 +11,6 @@ title: Rainfall Prediction System
 
 # Rainfall Prediction System
 
-![Rainfall Prediction System](docs/images/OIG1.jpg)
 
 ## Overview
 
