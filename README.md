@@ -1,6 +1,6 @@
 # Rainfall Prediction System
 
-![Rainfall Prediction System](C:\Users\DELL\OneDrive\Desktop\GIT my\e19-co544-Rainfall-Prediction-System\docs\images\OIG1.jpg)
+![Rainfall Prediction System](docs/images/OIG1.jpg)
 
 ## Overview
 
