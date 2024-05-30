@@ -30,7 +30,7 @@ The Rainfall Prediction System is a machine learning-based project aimed at prov
 1. Clone the repository:
    https://github.com/cepdnaclk/e19-co544-Rainfall-Prediction-System
    
-## Project Paige
+## Project Page
    https://cepdnaclk.github.io/e19-co544-Rainfall-Prediction-System/
 
 ## Evaluation
