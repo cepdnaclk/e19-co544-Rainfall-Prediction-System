@@ -1,0 +1,9 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+statsmodels
+openpyxl
+google-auth
+pydrive
+oauth2client
