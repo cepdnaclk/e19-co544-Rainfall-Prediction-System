@@ -54,8 +54,8 @@ The Rainfall Prediction System is a machine learning-based project aimed at prov
 
 ## Links
 
-- [Project Repository](https://github.com/cepdnaclk/{{ page.repository-name }}){:target="_blank"}
-- [Project Page](https://cepdnaclk.github.io/{{ page.repository-name}}){:target="_blank"}
+- [Project Repository](https://github.com/cepdnaclk/e19-co544-Rainfall-Prediction-System)
+- [Project Page](https://cepdnaclk.github.io/e19-co544-Rainfall-Prediction-System/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
