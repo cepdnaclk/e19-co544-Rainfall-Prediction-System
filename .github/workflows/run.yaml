@@ -1,0 +1,42 @@
+name: model_train
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'  # Specify your Python version
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      
+      - name: Train and test model
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python train_model.py
+          python test.py
+
+          echo "# Sanity Checks" > report2.md
+          cat test.txt >> report2.md
+
+          echo "# Decision Tree Model Scores" > report.md
+          cat scores.txt >> report.md
+
+        
+          echo "# Confusion Matrix & Feature Importance" > report1.md
+          echo '![](./ConfusionMatrix.png "ConfusionMatrix")' >> report1.md
+          echo '![](./FeatureImportance.png "FeatureImportance")' >> report1.md
+
+          cat report2.md report.md report1.md > combined_file.md
+
