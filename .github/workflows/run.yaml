@@ -18,7 +18,10 @@ jobs:
       - name: Install dependencies
         run: |
           cd MLOps
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install cml
+          
         shell: /usr/bin/bash -e {0}
         env:
           pythonLocation: /opt/hostedtoolcache/Python/3.8.18/x64
@@ -29,7 +32,7 @@ jobs:
           LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.18/x64/lib
       - name: Train model
         env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO_TOKEN: ${{ secrets.PAT }}
         run: |
           cd MLOps
           python train_model.py
