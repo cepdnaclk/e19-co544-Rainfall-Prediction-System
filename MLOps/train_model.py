@@ -92,8 +92,6 @@ with open("scores.txt", 'w') as score_file:
     score_file.write(f"R-squared: {r2_m}\n\n")
 '''
 
-# train_model.py
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeRegressor
@@ -123,15 +121,15 @@ features = [
 
 # Lag features (previous day's value)
 for target in targets:
-    df[f'{target}_lag1'] = df[target].shift(1)
+    df.loc[:, f'{target}_lag1'] = df[target].shift(1)
 
 # Calculate rolling statistics
 window_size = 7
 
 for target in targets:
-    df[f'{target}_rolling_mean_{window_size}'] = df[target].rolling(window=window_size).mean()
-    df[f'{target}_rolling_std_{window_size}'] = df[target].rolling(window=window_size).std()
-    df[f'{target}_rolling_median_{window_size}'] = df[target].rolling(window=window_size).median()
+    df.loc[:, f'{target}_rolling_mean_{window_size}'] = df[target].rolling(window=window_size).mean()
+    df.loc[:, f'{target}_rolling_std_{window_size}'] = df[target].rolling(window=window_size).std()
+    df.loc[:, f'{target}_rolling_median_{window_size}'] = df[target].rolling(window=window_size).median()
 
 # After feature engineering
 df.dropna(inplace=True)
@@ -184,3 +182,4 @@ with open("scores.txt", 'w') as score_file:
     score_file.write(f"Mean Absolute Error: {mae_m}\n")
     score_file.write(f"Mean Squared Error: {mse_m}\n")
     score_file.write(f"R-squared: {r2_m}\n\n")
+
