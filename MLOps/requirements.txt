@@ -1,9 +1,10 @@
+fastapi
+numpy==1.25.2
+scikit-learn==1.2.2
+uvicorn
 pandas
-numpy
-scikit-learn
 matplotlib
+joblib
 statsmodels
+matplotlib
 openpyxl
-google-auth
-pydrive
-oauth2client

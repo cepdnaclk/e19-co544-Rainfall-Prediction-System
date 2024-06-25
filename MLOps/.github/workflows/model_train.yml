@@ -1,0 +1,42 @@
+name: model_train
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.12
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Train the model
+        run: |
+          python rainfall_prediction.py
+
+      - name: Save the trained models
+        run: |
+          mkdir -p models
+          mv model_vavuniya.joblib models/
+          mv model_anuradhapura.joblib models/
+          mv model_maha.joblib models/
+          # Assuming the models are generated in the MLOps directory
+
+      - name: Build Docker image
+        run: |
+          docker build -t rainfall-prediction-app:latest .
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 8000:8000 --name rainfall-prediction-app rainfall-prediction-app:latest
