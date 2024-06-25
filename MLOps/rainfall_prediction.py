@@ -118,17 +118,33 @@ df.columns
 
 from sklearn.model_selection import train_test_split
 
-# Specify the features and include the relevant lag and rolling statistics columns
-features = [
+# Features specific to each target
+features_vavuniya = [
     'DayOfYear',
-    'Vavuniya_lag1', 'Anuradhapura_lag1', 'Maha Illuppallama_lag1',
-    'Vavuniya_rolling_mean_7', 'Vavuniya_rolling_std_7', 'Vavuniya_rolling_median_7',
-    'Anuradhapura_rolling_mean_7', 'Anuradhapura_rolling_std_7', 'Anuradhapura_rolling_median_7',
+    'Year',
+    'Vavuniya_lag1',
+    'Vavuniya_rolling_mean_7', 'Vavuniya_rolling_std_7', 'Vavuniya_rolling_median_7'
+]
+
+features_anuradhapura = [
+    'DayOfYear',
+    'Year',
+    'Anuradhapura_lag1',
+    'Anuradhapura_rolling_mean_7', 'Anuradhapura_rolling_std_7', 'Anuradhapura_rolling_median_7'
+]
+
+features_maha = [
+    'DayOfYear',
+    'Year',
+    'Maha Illuppallama_lag1',
     'Maha Illuppallama_rolling_mean_7', 'Maha Illuppallama_rolling_std_7', 'Maha Illuppallama_rolling_median_7'
 ]
 
 # Select the features from the DataFrame
-X = df[features]
+X_vavuniya = df[features_vavuniya]
+X_anuradhapura = df[features_anuradhapura]
+X_maha = df[features_maha]
+
 y_vavuniya = df['Vavuniya']
 y_anuradhapura = df['Anuradhapura']
 y_maha = df['Maha Illuppallama']
