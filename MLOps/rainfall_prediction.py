@@ -13,10 +13,10 @@ print(df_original.head())
 # Assuming your dataframe is named 'df'
 df = df_original[~df_original.index.isin([0, 1])]
 
-# Select features
+'''# Select features
 features = ['Year', 'Month', 'Day']
 
-print(features)
+print(features)'''
 
 #Check for null values
 df.isna().sum()
@@ -119,7 +119,7 @@ def train_and_evaluate_model(X_train, X_test, y_train, y_test, target_name):
     print(f"R-squared: {r2}")
     print()
 
-    return model
+    return best_gbr
 # Train and evaluate models for each target
 model_vavuniya = train_and_evaluate_model(X_train_v, X_test_v, y_train_v, y_test_v, 'Vavuniya')
 model_anuradhapura = train_and_evaluate_model(X_train_a, X_test_a, y_train_a, y_test_a, 'Anuradhapura')
