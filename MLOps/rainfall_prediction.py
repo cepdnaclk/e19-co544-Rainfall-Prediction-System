@@ -64,6 +64,8 @@ from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 
 # Convert the date column to datetime format
 df['Date'] = pd.to_datetime(df['Date'], format='%Y%m%d')
+df['Month'] = df['Date'].dt.month
+df['Year'] = df['Date'].dt.year
 
 # Extracting day of the year as a feature
 df['DayOfYear'] = df['Date'].dt.dayofyear
