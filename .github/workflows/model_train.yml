@@ -55,4 +55,4 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run --name rainfall-prediction-app -p 8000:8000 ${{ secrets.DOCKER_HUB_USERNAME }}/rainfall-prediction-app:latest
+          docker run -d -p 8000:8000 --name rainfall-prediction-app ${{ secrets.DOCKER_HUB_USERNAME }}/rainfall-prediction-app:latest
