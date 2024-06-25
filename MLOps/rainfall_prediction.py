@@ -153,9 +153,9 @@ y_maha = df['Maha Illuppallama']
 
 
 
-X_train, X_test, y_train_v, y_test_v = train_test_split(X, y_vavuniya, test_size=0.2, random_state=42)
-X_train, X_test, y_train_a, y_test_a = train_test_split(X, y_anuradhapura, test_size=0.2, random_state=42)
-X_train, X_test, y_train_m, y_test_m = train_test_split(X, y_maha, test_size=0.2, random_state=42)
+X_train, X_test, y_train_v, y_test_v = train_test_split(X_vavuniya, y_vavuniya, test_size=0.2, random_state=42)
+X_train, X_test, y_train_a, y_test_a = train_test_split(X_anuradhapura, y_anuradhapura, test_size=0.2, random_state=42)
+X_train, X_test, y_train_m, y_test_m = train_test_split(X_maha, y_maha, test_size=0.2, random_state=42)
 
 """## SARIMA
 
