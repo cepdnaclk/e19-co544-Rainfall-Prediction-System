@@ -225,7 +225,7 @@ def predict_vavuniya(data: PredictDataVavuniya):
             data.Vavuniya_rolling_mean7
         ]).reshape(1, -1)
 
-        prediction_vavuniya = model_vavuniya.predict(features)[0]
+        prediction_vavuniya = max(0, model_vavuniya.predict(features)[0])
 
         return {
             'predicted_rainfall': {
@@ -261,7 +261,7 @@ def predict_anuradhapura(data: PredictDataAnuradhapura):
             data.Anuradhapura_rolling_mean7
         ]).reshape(1, -1)
 
-        prediction_anuradhapura = model_anuradhapura.predict(features)[0]
+        prediction_anuradhapura = max(0, model_anuradhapura.predict(features)[0])
 
         return {
             'predicted_rainfall': {
@@ -296,7 +296,7 @@ def predict_maha(data: PredictDataMaha):
             data.Maha_rolling_mean7
         ]).reshape(1, -1)
 
-        prediction_maha = model_maha.predict(features)[0]
+        prediction_maha = max(0, model_maha.predict(features)[0])
 
         return {
             'predicted_rainfall': {
