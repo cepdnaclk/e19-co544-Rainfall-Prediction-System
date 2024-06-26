@@ -241,6 +241,7 @@ def predict_vavuniya(data: PredictDataVavuniya):
 def predict_anuradhapura(data: PredictDataAnuradhapura):
     """
     Predicts the rainfall for Anuradhapura.
+    Hello
 
     Args:
         data (PredictDataAnuradhapura): Input data containing the date and other features.
