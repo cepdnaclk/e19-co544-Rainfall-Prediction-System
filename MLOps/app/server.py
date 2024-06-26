@@ -168,19 +168,27 @@ model_maha = joblib.load('app/model_maha.joblib')
 def read_root():
     return {'message': 'Rainfall Prediction API'}
 
-# Define the input data model for the prediction
-class PredictData(BaseModel):
+# Define the input data model for Vavuniya prediction
+class PredictDataVavuniya(BaseModel):
     date: str  # Expecting date in "YYYY-MM-DD" format
     Vavuniya_lag1: float
     Vavuniya_lag2: float
     Vavuniya_lag3: float
     Vavuniya_rolling_mean3: float
     Vavuniya_rolling_mean7: float
+
+# Define the input data model for Anuradhapura prediction
+class PredictDataAnuradhapura(BaseModel):
+    date: str  # Expecting date in "YYYY-MM-DD" format
     Anuradhapura_lag1: float
     Anuradhapura_lag2: float
     Anuradhapura_lag3: float
     Anuradhapura_rolling_mean3: float
     Anuradhapura_rolling_mean7: float
+
+# Define the input data model for Maha Illuppallama prediction
+class PredictDataMaha(BaseModel):
+    date: str  # Expecting date in "YYYY-MM-DD" format
     Maha_lag1: float
     Maha_lag2: float
     Maha_lag3: float
@@ -195,12 +203,12 @@ def extract_dayofyear_and_year(date_str):
     return day_of_year, year
 
 @app.post('/predict/vavuniya')
-def predict_vavuniya(data: PredictData):
+def predict_vavuniya(data: PredictDataVavuniya):
     """
     Predicts the rainfall for Vavuniya.
 
     Args:
-        data (PredictData): Input data containing the date and other features.
+        data (PredictDataVavuniya): Input data containing the date and other features.
 
     Returns:
         dict: A dictionary containing the predicted rainfall for Vavuniya.
@@ -230,12 +238,12 @@ def predict_vavuniya(data: PredictData):
         raise HTTPException(status_code=400, detail=f"Invalid date format: {e}")
 
 @app.post('/predict/anuradhapura')
-def predict_anuradhapura(data: PredictData):
+def predict_anuradhapura(data: PredictDataAnuradhapura):
     """
     Predicts the rainfall for Anuradhapura.
 
     Args:
-        data (PredictData): Input data containing the date and other features.
+        data (PredictDataAnuradhapura): Input data containing the date and other features.
 
     Returns:
         dict: A dictionary containing the predicted rainfall for Anuradhapura.
@@ -265,12 +273,12 @@ def predict_anuradhapura(data: PredictData):
         raise HTTPException(status_code=400, detail=f"Invalid date format: {e}")
 
 @app.post('/predict/maha')
-def predict_maha(data: PredictData):
+def predict_maha(data: PredictDataMaha):
     """
     Predicts the rainfall for Maha Illuppallama.
 
     Args:
-        data (PredictData): Input data containing the date and other features.
+        data (PredictDataMaha): Input data containing the date and other features.
 
     Returns:
         dict: A dictionary containing the predicted rainfall for Maha Illuppallama.
